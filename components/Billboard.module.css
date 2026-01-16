@@ -1,0 +1,435 @@
+.billboard {
+  width: 100%;
+  height: 100%;
+  padding: 0.5rem 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.sectionTitle {
+  font-size: 0.75rem;
+  font-weight: 600;
+  margin: 0 0 0.5rem 0;
+  padding: 0 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: rgba(255, 255, 255, 0.6);
+  font-family: system-ui, -apple-system, sans-serif;
+  flex-shrink: 0;
+}
+
+.cardWrapper {
+  padding: 0 0.5rem;
+  overflow: hidden;
+  flex: 1;
+  min-height: 0;
+}
+
+.cardContainer {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+/* Current card in normal position */
+.current {
+  position: relative !important;
+  transform: translateX(0);
+  height: 100%;
+}
+
+/* Current card exiting to the left */
+.exitToLeft {
+  position: absolute !important;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  animation: slideOutLeft 0.5s ease-in-out forwards;
+  z-index: 1;
+}
+
+/* Next card entering from the right */
+.enterFromRight {
+  position: absolute !important;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transform: translateX(100%); /* Start off-screen */
+  animation: slideInFromRight 0.5s ease-in-out forwards;
+  z-index: 2;
+}
+
+@keyframes slideOutLeft {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+}
+}
+
+@keyframes slideInFromRight {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.card {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  max-width: 400px;
+  text-decoration: none;
+  color: inherit;
+  border-radius: 4px;
+  overflow: hidden;
+  background: #000;
+  
+  /* Digital screen glow effect */
+  box-shadow: 
+    0 0 20px rgba(255, 255, 255, 0.15),
+    0 0 40px rgba(100, 150, 255, 0.1),
+    inset 0 0 60px rgba(255, 255, 255, 0.03);
+  
+  /* Subtle screen border */
+  border: 2px solid rgba(50, 50, 50, 0.8);
+  
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.1) 0%,
+    transparent 50%,
+    rgba(0, 0, 0, 0.2) 100%
+  );
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* Scanline effect for digital screen look */
+.card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.1) 0px,
+    rgba(0, 0, 0, 0.1) 1px,
+    transparent 1px,
+    transparent 3px
+  );
+  pointer-events: none;
+  z-index: 3;
+  opacity: 0.3;
+}
+
+.card:hover {
+  box-shadow: 
+    0 0 30px rgba(255, 255, 255, 0.25),
+    0 0 60px rgba(100, 150, 255, 0.2),
+    inset 0 0 80px rgba(255, 255, 255, 0.05);
+  border-color: rgba(100, 100, 100, 0.6);
+}
+
+.cardImage {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #111;
+  
+  /* Slight brightness boost for screen effect */
+  filter: brightness(1.05) contrast(1.05) saturate(1.1);
+  transition: filter 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card:hover .cardImage {
+  filter: brightness(1.15) contrast(1.1) saturate(1.15);
+}
+
+.cardOverlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1.5rem 0.75rem 0.5rem;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.5) 60%, transparent 100%);
+  z-index: 1;
+}
+
+.cardTitle {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #fff;
+  line-height: 1.3;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+/* Navigation dots - LED style */
+.dots {
+  display: flex;
+  justify-content: flex-start;
+  gap: 0.4rem;
+  padding: 0.5rem 0.5rem 0;
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+  padding: 0;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 0 4px rgba(255, 255, 255, 0.1);
+}
+
+.dot:hover {
+  background: rgba(255, 255, 255, 0.5);
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
+}
+
+.activeDot {
+  background: #fff;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
+  width: 18px;
+  border-radius: 3px;
+}
+
+/* ========================================
+   VERTICAL VARIANT - Tall narrow billboard
+   ======================================== */
+.vertical {
+  padding: 0;
+}
+
+.vertical .sectionTitle {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  transform: rotate(180deg);
+  position: absolute;
+  left: -1.5rem;
+  top: 50%;
+  transform: rotate(180deg) translateY(50%);
+  padding: 0;
+  margin: 0;
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+}
+
+.vertical .cardWrapper {
+  padding: 0;
+}
+
+.vertical .card {
+  max-width: none;
+  width: 100%;
+  border-radius: 2px;
+  background: #1a2744;
+  border: none;
+  box-shadow: 
+    0 0 30px rgba(100, 150, 255, 0.15),
+    inset 0 0 40px rgba(255, 255, 255, 0.02);
+}
+
+.vertical .cardImage {
+  aspect-ratio: 1 / 2.5;
+  background-size: cover;
+  background-position: top center;
+}
+
+.vertical .cardOverlay {
+  padding: 3rem 0.5rem 0.5rem;
+  background: linear-gradient(to top, rgba(26, 39, 68, 0.95) 0%, rgba(26, 39, 68, 0.7) 40%, transparent 100%);
+}
+
+.vertical .cardTitle {
+  font-size: 0.75rem;
+  line-height: 1.4;
+  text-align: center;
+}
+
+.vertical .dots {
+  justify-content: center;
+  padding: 0.4rem 0.25rem 0.25rem;
+  gap: 0.3rem;
+}
+
+.vertical .dot {
+  width: 5px;
+  height: 5px;
+}
+
+.vertical .activeDot {
+  width: 14px;
+}
+
+/* ========================================
+   WIDE VARIANT - Horizontal wide billboard
+   ======================================== */
+.wide .card {
+  max-width: 600px;
+}
+
+.wide .cardImage {
+  aspect-ratio: 21 / 9;
+}
+
+.wide .cardTitle {
+  font-size: 1.1rem;
+}
+
+/* ========================================
+   CENTER VARIANT - Light cream billboard (Times Square center)
+   ======================================== */
+.center {
+  padding: 0;
+  height: 100%;
+}
+
+.center .sectionTitle {
+  position: absolute;
+  bottom: 8px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  color: #c41e3a;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-shadow: none;
+  z-index: 5;
+  padding: 0;
+  margin: 0;
+}
+
+.center .cardWrapper {
+  padding: 0;
+  height: 100%;
+  background: linear-gradient(180deg, #f5f3ef 0%, #ebe8e2 100%);
+  border: 3px solid #d0ccc4;
+  overflow: hidden;
+}
+
+.center .cardContainer {
+  height: 100%;
+  position: relative;
+}
+
+.center .current,
+.center .exitToLeft,
+.center .enterFromRight {
+  height: 100%;
+}
+
+.center .card {
+  max-width: none;
+  width: 100%;
+  height: 100%;
+  border-radius: 0;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+}
+
+.center .card::before {
+  background: repeating-linear-gradient(
+    90deg,
+    transparent 0px,
+    transparent 18px,
+    rgba(200, 195, 185, 0.3) 18px,
+    rgba(200, 195, 185, 0.3) 20px
+  );
+  opacity: 0.5;
+}
+
+.center .card::after {
+  display: none;
+}
+
+.center .cardImage {
+  aspect-ratio: auto;
+  height: 100%;
+  width: 100%;
+  background-size: contain;
+  background-position: center;
+  background-color: transparent;
+  filter: none;
+}
+
+.center .card:hover .cardImage {
+  filter: brightness(1.02);
+}
+
+.center .cardOverlay {
+  display: none;
+}
+
+.center .cardTitle {
+  display: none;
+}
+
+.center .dots {
+  position: absolute;
+  bottom: -20px;
+  left: 0;
+  right: 0;
+  justify-content: center;
+  padding: 0;
+}
+
+.center .dot {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.center .activeDot {
+  background: #c41e3a;
+  box-shadow: none;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .cardWrapper {
+    padding: 0 0.5rem;
+  }
+
+  .sectionTitle {
+    padding: 0 0.5rem;
+    font-size: 0.7rem;
+  }
+
+  .dots {
+    padding: 0.5rem 0.5rem 0;
+  }
+
+  .card {
+    max-width: 100%;
+  }
+
+  .cardTitle {
+    font-size: 0.85rem;
+  }
+  
+  .vertical .cardImage {
+    aspect-ratio: 1 / 2;
+  }
+}

@@ -1,0 +1,104 @@
+.layoutEditor {
+  position: absolute;
+  cursor: move;
+  z-index: 100;
+  border: 2px dashed rgba(0, 150, 255, 0.8);
+  background: rgba(0, 150, 255, 0.05);
+  box-sizing: border-box;
+}
+
+.layoutEditor:hover {
+  border-color: rgba(0, 200, 255, 1);
+  background: rgba(0, 150, 255, 0.1);
+}
+
+.dragging {
+  border-color: rgba(255, 100, 0, 1);
+  background: rgba(255, 100, 0, 0.1);
+}
+
+.content {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.infoPanel {
+  position: absolute;
+  top: -80px;
+  left: 0;
+  background: rgba(0, 0, 0, 0.9);
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 11px;
+  font-family: monospace;
+  white-space: nowrap;
+  z-index: 101;
+  pointer-events: auto;
+}
+
+.infoTitle {
+  font-weight: bold;
+  color: #0af;
+  margin-bottom: 4px;
+  font-size: 12px;
+}
+
+.infoSection {
+  color: #666;
+  font-size: 9px;
+  text-transform: uppercase;
+  margin-top: 6px;
+  margin-bottom: 2px;
+  letter-spacing: 0.5px;
+}
+
+.infoRow {
+  display: flex;
+  gap: 4px;
+  margin: 2px 0;
+}
+
+.infoRow span {
+  color: #888;
+  width: 16px;
+}
+
+.infoRow strong {
+  color: #0f0;
+}
+
+.copyBtn {
+  margin-top: 6px;
+  padding: 4px 8px;
+  background: #0af;
+  color: #000;
+  border: none;
+  border-radius: 3px;
+  font-size: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  width: 100%;
+}
+
+.copyBtn:hover {
+  background: #0cf;
+}
+
+.resizeHandle {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 16px;
+  height: 16px;
+  background: linear-gradient(135deg, transparent 50%, rgba(0, 150, 255, 0.8) 50%);
+  cursor: se-resize;
+  pointer-events: auto;
+}
+
+.resizeHandle:hover {
+  background: linear-gradient(135deg, transparent 50%, rgba(255, 100, 0, 1) 50%);
+}
+

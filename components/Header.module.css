@@ -1,0 +1,87 @@
+.siteHeader {
+  display: flex;
+  align-items: stretch;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  gap: 0;
+}
+
+.headerNav {
+  display: flex;
+  flex: 1;
+  margin: 0;
+  padding: 0;
+  gap: 0;
+  width: 100%;
+  font-size: 0;
+}
+
+.navLink {
+  display: block;
+  flex: 1 1 25%;
+  aspect-ratio: 3.5 / 1;
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  transform: scaleX(1.005);
+  transform-origin: left center;
+  position: relative;
+  overflow: hidden;
+}
+
+.navLink::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-size: 100% auto;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 1;
+  transition: opacity 0.2s ease;
+}
+
+.navLink:hover::before {
+  opacity: 1;
+}
+
+.logo::before {
+  background-image: url('/banner/greg_stuart_header.png');
+}
+
+.perspective::before {
+  background-image: url('/banner/perspective_header_v2.png');
+}
+
+.projects::before {
+  background-image: url('/banner/projects_header_v2.png');
+}
+
+.proposed::before {
+  background-image: url('/banner/proposed_header_v2.png');
+}
+
+/* Responsive */
+@media (max-width: 1050px) {
+  .headerNav {
+    flex-wrap: wrap;
+  }
+
+  .navLink {
+    flex: 0 0 50%;
+    width: 50%;
+  }
+}
+
+@media (max-width: 500px) {
+  .navLink {
+    flex: 0 0 100%;
+    width: 100%;
+  }
+}

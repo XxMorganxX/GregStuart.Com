@@ -1,0 +1,26 @@
+[
+  {
+    "id": "podcast1-001",
+    "title": "Brand Over Time, Sales Overnight with Starbucks' Tressie Lieberman",
+    "image": "/assets/podcast1/episode_1_Tressie_Lieberman.png",
+    "link": "",
+    "externalLink": "https://bettercmos.com/episodes/tpost/4ma2aemze1-brand-over-time-sales-overnight-with-sta",
+    "active": true
+  },
+  {
+    "id": "podcast1-002",
+    "title": "From Candy to Credit with Natasha Madan of Intuit Credit Karma",
+    "image": "/assets/podcast1/episode_2_Natasha_Madan.png",
+    "link": "",
+    "externalLink": "https://bettercmos.com/episodes/tpost/3nz3kp75t1-from-candy-to-credit-with-natasha-madan",
+    "active": true
+  },
+  {
+    "id": "podcast1-003",
+    "title": "Connecting Marketing to Growth, with Wayfair CMO Paul Toms",
+    "image": "/assets/podcast1/episode_3_Paul_Toms.png",
+    "link": "",
+    "externalLink": "https://bettercmos.com/episodes/tpost/vyldv8hvz1-connecting-marketing-to-growth-with-wayf",
+    "active": true
+  }
+]

@@ -1,0 +1,31 @@
+.container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.backgroundImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+
+/* 
+ * Overlay layer - Positioned and sized to match the actual rendered image
+ * Children use percentage positions relative to this layer (= the image)
+ */
+.overlayLayer {
+  position: absolute;
+  pointer-events: none;
+  /* Width, height, left, top set dynamically via JS */
+}
+
+.overlayLayer > * {
+  pointer-events: auto;
+}
+
+
+
+

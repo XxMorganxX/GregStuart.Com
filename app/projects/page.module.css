@@ -1,0 +1,702 @@
+/* Page Wrapper */
+.pageWrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #000;
+  overflow: visible;
+}
+
+/* Header */
+.headerWrapper {
+  position: relative;
+  z-index: 100;
+}
+
+/* Background Container */
+.backgroundContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1;
+}
+
+.backgroundImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+
+/* Main Container - 3 Column Layout */
+.mainContainer {
+  display: grid;
+  grid-template-columns: 250px 1fr 280px;
+  gap: 0;
+  flex: 1;
+  max-width: 1600px;
+  margin: 0 auto;
+  width: 100%;
+  position: relative;
+  z-index: 10;
+  min-height: calc(100vh - 60px);
+  min-height: 0;
+}
+
+/* Left Sidebar */
+.leftSidebar {
+  background-color: rgba(232, 232, 232, 0.95);
+  padding: 30px 20px;
+  border-right: 1px solid #d0d0d0;
+}
+
+.sidebarTitle {
+  font-size: 14px;
+  font-weight: 600;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #f27d42;
+}
+
+.sidebarNav {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.navItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 15px;
+  background-color: white;
+  border: 1px solid #ddd;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-align: left;
+  font-family: inherit;
+}
+
+.navItem:hover {
+  background-color: #f27d42;
+  border-color: #f27d42;
+}
+
+.navItem:hover .navLabel {
+  color: white;
+}
+
+.navItem:hover .navArrow {
+  color: white;
+}
+
+.navLabel {
+  font-size: 13px;
+  color: #333;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.navArrow {
+  font-size: 18px;
+  color: #999;
+  transition: color 0.2s;
+}
+
+/* Center Content Area */
+.contentArea {
+  background-color: rgba(255, 255, 255, 0.95);
+  padding: 50px 60px;
+}
+
+/* Page Introduction */
+.pageIntro {
+  margin-bottom: 50px;
+  padding-bottom: 40px;
+  border-bottom: 2px solid #e8e8e8;
+}
+
+.pageTitle {
+  font-size: 32px;
+  font-weight: 300;
+  margin-bottom: 20px;
+  color: #333;
+  line-height: 1.3;
+}
+
+.introText {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #555;
+  max-width: 800px;
+}
+
+.highlight {
+  color: #f27d42;
+  font-weight: 600;
+}
+
+/* Project Sections */
+.projectSection {
+  margin-bottom: 60px;
+  padding-bottom: 50px;
+  border-bottom: 2px solid #e8e8e8;
+  scroll-margin-top: 20px;
+}
+
+.projectSection:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
+.projectHeader {
+  margin-bottom: 25px;
+}
+
+.projectYear {
+  display: inline-block;
+  background-color: #f27d42;
+  color: white;
+  padding: 4px 12px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 12px;
+}
+
+.projectTitle {
+  font-size: 26px;
+  font-weight: 400;
+  color: #333;
+  line-height: 1.3;
+}
+
+.projectContent {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.projectStory {
+  font-size: 15px;
+  line-height: 1.8;
+  color: #444;
+}
+
+.projectStory p {
+  margin-bottom: 15px;
+}
+
+.projectStory p:last-child {
+  margin-bottom: 0;
+}
+
+.projectStory strong {
+  color: #333;
+  font-weight: 600;
+}
+
+.quote {
+  font-style: italic;
+  padding-left: 20px;
+  border-left: 3px solid #f27d42;
+  color: #555;
+  margin: 20px 0;
+}
+
+/* Milestones Section */
+.milestonesSection {
+  background-color: #f9f9f9;
+  padding: 25px 30px;
+  border-radius: 4px;
+}
+
+.milestonesTitle {
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.milestonesList {
+  list-style: decimal;
+  padding-left: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.milestonesList li {
+  font-size: 14px;
+  line-height: 1.7;
+  color: #444;
+  padding-left: 10px;
+}
+
+.milestonesList li strong {
+  color: #333;
+}
+
+/* Highlight Box */
+.highlightBox {
+  background: linear-gradient(135deg, #fff5f0 0%, #fff 100%);
+  padding: 25px 30px;
+  border-left: 4px solid #f27d42;
+  border-radius: 0 4px 4px 0;
+}
+
+.highlightBox h4 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #f27d42;
+  margin-bottom: 12px;
+}
+
+.highlightBox p {
+  font-size: 14px;
+  line-height: 1.7;
+  color: #444;
+  margin-bottom: 10px;
+}
+
+.highlightBox p:last-child {
+  margin-bottom: 0;
+}
+
+/* Impact Grid */
+.impactGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.impactCard {
+  background-color: #f27d42;
+  color: white;
+  padding: 25px 20px;
+  text-align: center;
+  border-radius: 4px;
+}
+
+.impactNumber {
+  display: block;
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.impactLabel {
+  font-size: 13px;
+  opacity: 0.95;
+}
+
+/* Project Outcome */
+.projectOutcome {
+  font-size: 15px;
+  line-height: 1.8;
+  color: #444;
+}
+
+.projectOutcome strong {
+  color: #333;
+}
+
+.missionStatement {
+  font-size: 18px;
+  color: #333;
+  padding: 15px 20px;
+  background-color: #f9f9f9;
+  border-radius: 4px;
+  margin-bottom: 15px;
+}
+
+.missionStatement em {
+  color: #f27d42;
+  font-weight: 500;
+}
+
+.personalNote {
+  font-style: italic;
+  color: #555;
+}
+
+.bookLink {
+  color: #f27d42;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.bookLink:hover {
+  text-decoration: underline;
+}
+
+/* Framework Grid */
+.frameworkGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.frameworkCard {
+  background-color: #f9f9f9;
+  padding: 20px 25px;
+  border-radius: 4px;
+}
+
+.frameworkCard h4 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #f27d42;
+  margin-bottom: 12px;
+}
+
+.frameworkCard ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.frameworkCard li {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #444;
+  margin-bottom: 8px;
+}
+
+.frameworkCard p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #444;
+  margin: 0;
+}
+
+/* Participating Brands */
+.participatingBrands {
+  margin-bottom: 10px;
+}
+
+.participatingBrands h4 {
+  font-size: 14px;
+  font-weight: 600;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 15px;
+}
+
+.brandsList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.brandTag {
+  background-color: #333;
+  color: white;
+  padding: 8px 16px;
+  font-size: 13px;
+  font-weight: 500;
+  border-radius: 20px;
+}
+
+/* Methodology Section */
+.methodologySection {
+  background-color: #f9f9f9;
+  padding: 25px 30px;
+  border-radius: 4px;
+}
+
+.methodologySection h4 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.methodologyList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.methodologyList li {
+  font-size: 14px;
+  line-height: 1.7;
+  color: #444;
+  padding-left: 20px;
+  position: relative;
+}
+
+.methodologyList li::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: #f27d42;
+  font-weight: 600;
+}
+
+.methodologyList li strong {
+  color: #333;
+}
+
+/* Right Sidebar */
+.rightSidebar {
+  background: linear-gradient(180deg, rgba(232, 158, 92, 0.95) 0%, rgba(217, 136, 70, 0.95) 100%);
+  padding: 30px 25px;
+  color: white;
+}
+
+.sidebarHeading {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 25px;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.achievementItem {
+  margin-bottom: 20px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.achievementItem:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
+.achievementNumber {
+  font-size: 32px;
+  font-weight: 700;
+  display: block;
+  line-height: 1;
+  margin-bottom: 5px;
+}
+
+.achievementDetails {
+  margin-top: 5px;
+}
+
+.achievementTitle {
+  font-size: 14px;
+  font-weight: 600;
+  margin: 0 0 3px 0;
+}
+
+.achievementSubtitle {
+  font-size: 12px;
+  margin: 0;
+  opacity: 0.85;
+}
+
+/* Footer */
+.mainFooter {
+  background-color: #2c2c2c;
+  color: white;
+  padding: 30px 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  z-index: 10;
+}
+
+.footerNav {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-size: 14px;
+}
+
+.footerNav a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.footerNav a:hover {
+  color: #f27d42;
+}
+
+.dot {
+  color: #666;
+  font-size: 8px;
+}
+
+.footerRight {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.socialIcons {
+  display: flex;
+  gap: 15px;
+}
+
+.socialIcon {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s;
+}
+
+.socialIcon:hover {
+  transform: scale(1.1);
+}
+
+.socialIcon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.facebook {
+  background-color: #3b5998;
+}
+
+.twitter {
+  background-color: #1da1f2;
+}
+
+.linkedin {
+  background-color: #0077b5;
+}
+
+.other {
+  background-color: #666;
+}
+
+.copyright {
+  font-size: 13px;
+  color: #999;
+}
+
+/* Responsive Design */
+@media (max-width: 1400px) {
+  .mainContainer {
+    grid-template-columns: 220px 1fr 260px;
+  }
+  
+  .contentArea {
+    padding: 40px 40px;
+  }
+
+  .impactGrid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+  }
+
+  .impactNumber {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .mainContainer {
+    grid-template-columns: 1fr;
+    min-height: auto;
+    overflow: visible;
+  }
+  
+  .leftSidebar,
+  .rightSidebar {
+    display: none;
+  }
+  
+  .contentArea {
+    padding: 40px 30px;
+    height: auto;
+    overflow: visible;
+  }
+  
+  .impactGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .frameworkGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .contentArea {
+    padding: 30px 20px;
+  }
+  
+  .pageTitle {
+    font-size: 26px;
+  }
+
+  .projectTitle {
+    font-size: 22px;
+  }
+  
+  .impactGrid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .impactCard {
+    padding: 20px 15px;
+  }
+
+  .impactNumber {
+    font-size: 32px;
+  }
+
+  .milestonesSection,
+  .methodologySection {
+    padding: 20px;
+  }
+
+  .highlightBox {
+    padding: 20px;
+  }
+
+  .brandsList {
+    gap: 8px;
+  }
+
+  .brandTag {
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+  
+  .mainFooter {
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  .footerNav {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .pageTitle {
+    font-size: 22px;
+  }
+
+  .projectTitle {
+    font-size: 20px;
+  }  .milestonesList li {
+    font-size: 13px;
+  }
+}

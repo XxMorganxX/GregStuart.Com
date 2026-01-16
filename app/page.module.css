@@ -1,0 +1,218 @@
+.pageWrapper {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  background: #1a1a1a;
+}
+
+/* Header positioned over the background */
+.headerWrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background-image: url('/bg.jpg');
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+}
+
+/* Main Content - fills ENTIRE viewport */
+.mainContent {
+  position: absolute;
+  inset: 0;
+}
+
+/* 
+ * Background wrapper - Uses ImageAnchoredLayout component
+ * Fills the ENTIRE viewport (100vw x 100vh)
+ */
+.backgroundWrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+/* 
+ * BILLBOARD POSITIONS - All percentages relative to the background image!
+ * Since the overlay layer matches the image exactly, these percentages
+ * represent fixed points ON the image that stay stable as browser resizes.
+ */
+
+/* Billboard 1 (Top) - positioned on the center billboard in Times Square */
+.centerBillboardTop {
+  position: absolute;
+  left: 36.2%;
+  top: 16.9%;
+  width: 8.9%;
+  height: 19.3%;
+  z-index: 4;
+}
+
+/* Billboard 2 (Bottom) - positioned below Billboard 1 */
+.centerBillboardBottom {
+  position: absolute;
+  left: 35.8%;
+  top: 37.5%;
+  width: 12.5%;
+  height: 18.5%;
+  z-index: 4;
+}
+
+/* News billboard - right side of Times Square */
+.newsBillboard {
+  position: absolute;
+  right: 10.3%;
+  top: 24%;
+  width: 16.4%;
+  height: 22%;
+  z-index: 4;
+}
+
+/* 
+ * Greg Stuart Photo - Positioned to sit just above the footer
+ * bottom accounts for footer height (~60px)
+ */
+.gregPhoto {
+  position: absolute;
+  left: 1%;
+  bottom: 60px;
+  z-index: 5;
+  height: 70%;
+}
+
+.gregPhoto img {
+  height: 100%;
+  width: auto;
+  filter: drop-shadow(2px 4px 6px rgba(0,0,0,0.3));
+}
+
+
+/* Footer - absolutely positioned at bottom, overlays the background */
+.mainFooter {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background: #6c644e;
+  z-index: 10;
+}
+
+.footerNav {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.footerNav a {
+  color: #333;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.footerNav a:hover {
+  color: #5B4B9E;
+}
+
+.dot {
+  color: #5B4B9E;
+  font-size: 8px;
+}
+
+.footerRight {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.socialIcons {
+  display: flex;
+  gap: 8px;
+}
+
+.socialIcon {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s;
+}
+
+.socialIcon:hover {
+  transform: scale(1.1);
+}
+
+.socialIcon svg {
+  width: 36px;
+  height: 36px;
+}
+
+.facebook svg {
+  color: #3b5998;
+}
+
+.twitter svg {
+  color: #1DA1F2;
+}
+
+.linkedin svg {
+  color: #0077B5;
+}
+
+.other svg {
+  color: #55acee;
+}
+
+.copyright {
+  color: #666;
+  font-size: 14px;
+}
+
+/* Responsive */
+@media (max-width: 800px) {
+  .gregPhoto {
+    height: 60%;
+  }
+}
+
+@media (max-width: 600px) {
+  .mainFooter {
+    flex-direction: column;
+    gap: 15px;
+    padding: 10px 15px;
+  }
+  
+  .footerNav {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+  
+  .footerNav a {
+    font-size: 14px;
+  }
+  
+  /* Hide Greg photo on small screens */
+  .gregPhoto {
+    display: none;
+  }
+  
+  /* Adjust billboard sizes for mobile */
+  .centerBillboardTop,
+  .centerBillboardBottom {
+    width: 12%;
+  }
+  
+  .newsBillboard {
+    width: 25%;
+  }
+}
