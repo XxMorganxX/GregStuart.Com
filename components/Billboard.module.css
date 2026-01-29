@@ -216,6 +216,156 @@
 }
 
 /* ========================================
+   STATIONARY BACKGROUND MODE
+   Only text rotates, background stays fixed
+   ======================================== */
+.stationaryBg .cardWrapper {
+  position: relative;
+  border-radius: 4px;
+  overflow: hidden;
+  background: #000;
+  
+  /* Digital screen glow effect */
+  box-shadow: 
+    0 0 20px rgba(255, 255, 255, 0.15),
+    0 0 40px rgba(100, 150, 255, 0.1),
+    inset 0 0 60px rgba(255, 255, 255, 0.03);
+  
+  /* Subtle screen border */
+  border: 2px solid rgba(50, 50, 50, 0.8);
+}
+
+.stationaryBg .cardWrapper::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.1) 0%,
+    transparent 50%,
+    rgba(0, 0, 0, 0.2) 100%
+  );
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* Scanline effect for digital screen look */
+.stationaryBg .cardWrapper::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.1) 0px,
+    rgba(0, 0, 0, 0.1) 1px,
+    transparent 1px,
+    transparent 3px
+  );
+  pointer-events: none;
+  z-index: 3;
+  opacity: 0.3;
+}
+
+.stationaryBackground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #111;
+  z-index: 0;
+  
+  /* Digital screen effects */
+  filter: brightness(1.05) contrast(1.05) saturate(1.1);
+}
+
+.textContainer {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  overflow: hidden;
+}
+
+/* Text wrapper/link styling */
+.titleWrapper,
+.titleLink {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1.5rem 0.75rem 0.5rem;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.5) 60%, transparent 100%);
+  display: flex;
+  align-items: flex-end;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.titleLink:hover {
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.6) 60%, transparent 100%);
+}
+
+.titleWrapper .cardTitle,
+.titleLink .cardTitle {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #fff;
+  line-height: 1.3;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+/* Text animation states */
+.textCurrent {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.textExitToLeft {
+  animation: textSlideOutLeft 0.5s ease-in-out forwards;
+  z-index: 1;
+}
+
+.textEnterFromRight {
+  transform: translateX(100%);
+  animation: textSlideInFromRight 0.5s ease-in-out forwards;
+  z-index: 2;
+}
+
+@keyframes textSlideOutLeft {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+}
+
+@keyframes textSlideInFromRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* ========================================
    VERTICAL VARIANT - Tall narrow billboard
    ======================================== */
 .vertical {

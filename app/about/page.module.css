@@ -1,0 +1,412 @@
+/* ============================================
+   Page Wrapper & Layout Structure
+   ============================================ */
+
+.pageWrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  background: #000;
+}
+
+.headerWrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+}
+
+.backgroundContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.backgroundImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.3;
+}
+
+.mainContainer {
+  flex: 1;
+  position: relative;
+  z-index: 1;
+  margin-top: 80px;
+  padding: 40px 20px 100px;
+}
+
+.contentArea {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* ============================================
+   Two Column Layout
+   ============================================ */
+
+.aboutLayout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  margin-bottom: 60px;
+  align-items: start;
+}
+
+/* ============================================
+   Left Column - Grid
+   ============================================ */
+
+.leftColumn {
+  position: relative;
+}
+
+.gridContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 20px;
+  aspect-ratio: 1;
+  max-width: 600px;
+}
+
+.gridItem {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+}
+
+.nameBox {
+  background: linear-gradient(135deg, #e67e22 0%, #d35400 100%);
+}
+
+.nameBox h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  color: white;
+  margin: 0;
+  text-align: center;
+}
+
+.photoBox {
+  background: #2c3e50;
+  padding: 0;
+}
+
+.photoBox img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.quoteBox {
+  background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);
+}
+
+.quoteBox p {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: white;
+  margin: 0;
+  text-align: center;
+  line-height: 1.4;
+}
+
+.titleBox {
+  background: linear-gradient(135deg, #e67e22 0%, #d35400 100%);
+}
+
+.titleBox p {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: white;
+  margin: 0;
+  text-align: center;
+  line-height: 1.4;
+}
+
+/* ============================================
+   Right Column - Bio Content
+   ============================================ */
+
+.rightColumn {
+  padding: 40px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+.bioSection {
+  color: #2c3e50;
+}
+
+.bioTitle {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #2c3e50;
+  margin: 0 0 30px 0;
+}
+
+.bioText {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 20px;
+  color: #34495e;
+}
+
+.bioText.highlight {
+  color: #e67e22;
+  font-weight: 600;
+  font-size: 1.15rem;
+}
+
+/* ============================================
+   Career Highlights Section
+   ============================================ */
+
+.highlightsSection {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 12px;
+  padding: 50px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+.highlightsList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.highlightItem {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 30px;
+  align-items: flex-start;
+}
+
+.highlightItem:last-child {
+  margin-bottom: 0;
+}
+
+.bullet {
+  color: #3498db;
+  font-size: 1.5rem;
+  flex-shrink: 0;
+  line-height: 1.6;
+}
+
+.highlightItem p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #2c3e50;
+  margin: 0;
+}
+
+.award {
+  color: #e67e22;
+  font-weight: 700;
+}
+
+/* ============================================
+   Footer
+   ============================================ */
+
+.mainFooter {
+  position: relative;
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.9);
+  border-top: 2px solid #e67e22;
+  padding: 30px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.footerNav {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.footerNav a {
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.footerNav a:hover {
+  color: #e67e22;
+}
+
+.dot {
+  color: #e67e22;
+  font-size: 0.6rem;
+}
+
+.footerRight {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.socialIcons {
+  display: flex;
+  gap: 15px;
+}
+
+.socialIcon {
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.socialIcon:hover {
+  transform: translateY(-3px);
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.socialIcon svg {
+  width: 18px;
+  height: 18px;
+}
+
+.facebook {
+  color: #1877f2;
+}
+
+.youtube {
+  color: #ff0000;
+}
+
+.linkedin {
+  color: #0077b5;
+}
+
+.copyright {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.9rem;
+}
+
+/* ============================================
+   Responsive Design
+   ============================================ */
+
+@media (max-width: 1024px) {
+  .aboutLayout {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .gridContainer {
+    max-width: 100%;
+  }
+
+  .bioTitle {
+    font-size: 2.5rem;
+  }
+
+  .highlightsSection {
+    padding: 40px 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .mainContainer {
+    padding: 20px 15px 80px;
+  }
+
+  .gridContainer {
+    gap: 15px;
+  }
+
+  .nameBox h1 {
+    font-size: 2rem;
+  }
+
+  .quoteBox p {
+    font-size: 1rem;
+  }
+
+  .titleBox p {
+    font-size: 1.2rem;
+  }
+
+  .rightColumn {
+    padding: 30px 25px;
+  }
+
+  .bioTitle {
+    font-size: 2rem;
+  }
+
+  .bioText {
+    font-size: 1rem;
+  }
+
+  .highlightsSection {
+    padding: 30px 20px;
+  }
+
+  .highlightItem p {
+    font-size: 1rem;
+  }
+
+  .mainFooter {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+  }
+
+  .footerNav {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .gridContainer {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    aspect-ratio: auto;
+  }
+
+  .gridItem {
+    min-height: 150px;
+  }
+
+  .nameBox h1 {
+    font-size: 2.5rem;
+  }
+
+  .bioTitle {
+    font-size: 1.75rem;
+  }
+
+  .highlightItem {
+    gap: 15px;
+  }
+
+  .bullet {
+    font-size: 1.2rem;
+  }
+}
