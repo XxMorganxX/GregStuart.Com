@@ -32,14 +32,15 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  opacity: 0.3;
+  opacity: 0.22;
+  filter: grayscale(20%) contrast(1.05);
 }
 
 .mainContainer {
   flex: 1;
   position: relative;
   z-index: 1;
-  margin-top: 80px;
+  margin-top: calc(100vw / 14 + 32px);
   padding: 40px 20px 100px;
 }
 
@@ -72,68 +73,92 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
-  gap: 20px;
+  gap: 18px;
   aspect-ratio: 1;
-  max-width: 600px;
+  max-width: 620px;
+  padding: 18px;
+  border-radius: 34px;
+  background: rgba(8, 8, 8, 0.38);
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.42);
+  backdrop-filter: blur(4px);
 }
 
 .gridItem {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 30px;
-  border-radius: 8px;
+  padding: clamp(24px, 4vw, 42px);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 24px;
   overflow: hidden;
   position: relative;
+  min-height: 0;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.16);
 }
 
 .nameBox {
-  background: linear-gradient(135deg, #e67e22 0%, #d35400 100%);
+  background: linear-gradient(145deg, #ff9f1c 0%, #e86f00 58%, #c94d00 100%);
 }
 
 .nameBox h1 {
-  font-size: 3rem;
-  font-weight: 700;
+  font-size: clamp(2.8rem, 5.4vw, 4.7rem);
+  font-weight: 800;
   color: white;
   margin: 0;
   text-align: center;
+  line-height: 0.98;
+  letter-spacing: -0.06em;
+  text-wrap: balance;
+  text-shadow: 0 3px 16px rgba(0, 0, 0, 0.18);
 }
 
 .photoBox {
   background: #2c3e50;
   padding: 0;
+  border-color: rgba(255, 255, 255, 0.24);
 }
 
 .photoBox img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center 22%;
+  transform: scale(1.02);
 }
 
 .quoteBox {
-  background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);
+  background: linear-gradient(145deg, #ffb21b 0%, #f28a08 54%, #e46800 100%);
 }
 
 .quoteBox p {
-  font-size: 1.2rem;
-  font-weight: 600;
-  color: white;
-  margin: 0;
-  text-align: center;
-  line-height: 1.4;
-}
-
-.titleBox {
-  background: linear-gradient(135deg, #e67e22 0%, #d35400 100%);
-}
-
-.titleBox p {
-  font-size: 1.5rem;
+  font-size: clamp(1.18rem, 2.1vw, 1.65rem);
   font-weight: 700;
   color: white;
   margin: 0;
   text-align: center;
-  line-height: 1.4;
+  line-height: 1.28;
+  letter-spacing: -0.025em;
+  text-wrap: balance;
+  max-width: 15ch;
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.16);
+}
+
+.titleBox {
+  background: radial-gradient(circle at 28% 20%, rgba(255, 255, 255, 0.15), transparent 34%),
+    linear-gradient(145deg, #f08a10 0%, #dc6100 56%, #bf4200 100%);
+}
+
+.titleBox p {
+  font-size: clamp(1.45rem, 2.8vw, 2.35rem);
+  font-weight: 800;
+  color: white;
+  margin: 0;
+  text-align: center;
+  line-height: 1.16;
+  letter-spacing: -0.045em;
+  text-wrap: balance;
+  max-width: 13ch;
+  text-shadow: 0 2px 16px rgba(0, 0, 0, 0.18);
 }
 
 /* ============================================
@@ -313,9 +338,18 @@
    ============================================ */
 
 @media (max-width: 1024px) {
+  .mainContainer {
+    margin-top: calc(100vw / 3.5 + 32px);
+  }
+
   .aboutLayout {
     grid-template-columns: 1fr;
     gap: 40px;
+  }
+
+  .leftColumn {
+    display: flex;
+    justify-content: center;
   }
 
   .gridContainer {
@@ -338,18 +372,24 @@
 
   .gridContainer {
     gap: 15px;
+    padding: 14px;
+    border-radius: 28px;
+  }
+
+  .gridItem {
+    border-radius: 20px;
   }
 
   .nameBox h1 {
-    font-size: 2rem;
+    font-size: clamp(2.4rem, 9vw, 3.8rem);
   }
 
   .quoteBox p {
-    font-size: 1rem;
+    font-size: clamp(1.05rem, 4vw, 1.35rem);
   }
 
   .titleBox p {
-    font-size: 1.2rem;
+    font-size: clamp(1.35rem, 5vw, 1.9rem);
   }
 
   .rightColumn {
@@ -384,18 +424,23 @@
 }
 
 @media (max-width: 480px) {
+  .mainContainer {
+    margin-top: calc(400vw / 3.5 + 24px);
+  }
+
   .gridContainer {
     grid-template-columns: 1fr;
     grid-template-rows: auto;
     aspect-ratio: auto;
+    gap: 14px;
   }
 
   .gridItem {
-    min-height: 150px;
+    min-height: 180px;
   }
 
   .nameBox h1 {
-    font-size: 2.5rem;
+    font-size: 3rem;
   }
 
   .bioTitle {

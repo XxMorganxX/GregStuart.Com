@@ -1,0 +1,377 @@
+.pageWrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  background: #000;
+  color: #1f2f3d;
+}
+
+.headerWrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+}
+
+.backgroundContainer {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.backgroundImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.24;
+  filter: grayscale(20%) contrast(1.05);
+}
+
+.mainContainer {
+  flex: 1;
+  position: relative;
+  z-index: 1;
+  width: min(1180px, calc(100% - 40px));
+  margin: calc(100vw / 14 + 48px) auto 0;
+  padding: 36px 0 90px;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: minmax(360px, 0.95fr) minmax(320px, 1fr);
+  column-gap: 36px;
+  align-items: end;
+  max-width: none;
+  margin-bottom: 34px;
+  padding: 34px 40px;
+  color: white;
+  border-radius: 24px;
+  background:
+    radial-gradient(circle at 15% 20%, rgba(255, 178, 27, 0.34), transparent 34%),
+    rgba(0, 0, 0, 0.66);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  box-shadow: 0 28px 70px rgba(0, 0, 0, 0.34);
+  backdrop-filter: blur(8px);
+}
+
+.kicker {
+  grid-column: 1 / -1;
+  margin: 0 0 12px;
+  color: #ffb21b;
+  font-size: 0.86rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.hero h1 {
+  margin: 0;
+  max-width: 13ch;
+  font-size: clamp(2.85rem, 5.45vw, 5.45rem);
+  line-height: 0.9;
+  letter-spacing: -0.075em;
+  text-wrap: balance;
+}
+
+.heroText {
+  max-width: 560px;
+  margin: 0 0 4px;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: clamp(1rem, 1.65vw, 1.18rem);
+  line-height: 1.55;
+}
+
+.contactGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.92fr) minmax(360px, 1.08fr);
+  gap: 28px;
+  align-items: start;
+}
+
+.infoPanel,
+.emailForm {
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow: 0 22px 60px rgba(0, 0, 0, 0.32);
+}
+
+.infoPanel {
+  padding: 34px;
+}
+
+.infoPanel h2,
+.emailForm h2 {
+  margin: 0 0 14px;
+  color: #2c3e50;
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1;
+  letter-spacing: -0.055em;
+}
+
+.infoPanel p,
+.formHeader p,
+.locationBox p,
+.formNote {
+  color: #4c5d6b;
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.contactCards {
+  display: grid;
+  gap: 12px;
+  margin: 28px 0;
+}
+
+.contactCard {
+  display: grid;
+  gap: 4px;
+  padding: 18px 20px;
+  color: #243746;
+  border: 1px solid rgba(44, 62, 80, 0.13);
+  border-radius: 16px;
+  background: #fff8f0;
+  transition: transform 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease;
+}
+
+.contactCard:hover {
+  transform: translateY(-2px);
+  border-color: rgba(230, 126, 34, 0.55);
+  box-shadow: 0 14px 26px rgba(230, 126, 34, 0.14);
+}
+
+.contactCard span {
+  color: #e67e22;
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.contactCard strong {
+  overflow-wrap: anywhere;
+  font-size: 1rem;
+}
+
+.detailBox,
+.locationBox {
+  margin-top: 24px;
+  padding: 24px;
+  border-radius: 18px;
+  background: #f4f7f9;
+}
+
+.detailBox h3 {
+  margin: 0 0 14px;
+  color: #2c3e50;
+  font-size: 1.1rem;
+}
+
+.detailBox ul {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.detailBox li {
+  position: relative;
+  padding-left: 20px;
+  color: #34495e;
+  line-height: 1.5;
+}
+
+.detailBox li::before {
+  content: '●';
+  position: absolute;
+  left: 0;
+  color: #e67e22;
+  font-size: 0.7rem;
+  line-height: 2.1;
+}
+
+.locationBox span {
+  display: block;
+  color: #e67e22;
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.locationBox strong {
+  display: block;
+  margin-top: 6px;
+  color: #2c3e50;
+  font-size: 1.5rem;
+}
+
+.locationBox p {
+  margin: 8px 0 0;
+}
+
+.emailForm {
+  display: grid;
+  gap: 18px;
+  padding: 34px;
+}
+
+.formHeader {
+  margin-bottom: 2px;
+}
+
+.formHeader p,
+.formNote {
+  margin: 0;
+}
+
+.emailForm label {
+  display: grid;
+  gap: 8px;
+  color: #2c3e50;
+  font-size: 0.92rem;
+  font-weight: 800;
+}
+
+.emailForm input,
+.emailForm select,
+.emailForm textarea {
+  width: 100%;
+  border: 1px solid rgba(44, 62, 80, 0.18);
+  border-radius: 14px;
+  padding: 14px 16px;
+  color: #203140;
+  background: white;
+  font: inherit;
+  font-weight: 500;
+  transition: border-color 0.18s ease, box-shadow 0.18s ease;
+}
+
+.emailForm textarea {
+  resize: vertical;
+  min-height: 160px;
+}
+
+.emailForm input:focus,
+.emailForm select:focus,
+.emailForm textarea:focus {
+  outline: none;
+  border-color: #e67e22;
+  box-shadow: 0 0 0 4px rgba(230, 126, 34, 0.15);
+}
+
+.emailForm button {
+  justify-self: start;
+  border: 0;
+  border-radius: 999px;
+  padding: 15px 28px;
+  color: white;
+  background: linear-gradient(135deg, #ff9f1c, #e86f00);
+  box-shadow: 0 16px 30px rgba(232, 111, 0, 0.24);
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 800;
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.emailForm button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 20px 36px rgba(232, 111, 0, 0.32);
+}
+
+.mainFooter {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding: 28px 40px;
+  color: white;
+  background: rgba(0, 0, 0, 0.9);
+  border-top: 2px solid #e67e22;
+}
+
+.footerNav,
+.footerRight {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.footerNav a,
+.footerRight a {
+  color: white;
+  font-size: 0.95rem;
+  font-weight: 700;
+  transition: color 0.18s ease;
+}
+
+.footerNav a:hover,
+.footerRight a:hover {
+  color: #ffb21b;
+}
+
+.dot {
+  color: #777;
+  font-size: 0.5rem;
+}
+
+.copyright {
+  color: #aaa;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 900px) {
+  .mainContainer {
+    width: min(100% - 28px, 760px);
+    margin-top: calc(100vw / 7 + 32px);
+  }
+
+  .hero {
+    display: block;
+    padding: 32px;
+  }
+
+  .heroText {
+    margin-top: 24px;
+  }
+
+  .contactGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .mainContainer {
+    width: min(100% - 24px, 520px);
+    padding-bottom: 54px;
+  }
+
+  .hero,
+  .infoPanel,
+  .emailForm {
+    padding: 24px;
+    border-radius: 20px;
+  }
+
+  .hero h1 {
+    font-size: 3rem;
+  }
+
+  .mainFooter {
+    flex-direction: column;
+    padding: 22px 20px;
+    text-align: center;
+  }
+
+  .footerNav,
+  .footerRight {
+    justify-content: center;
+  }
+}

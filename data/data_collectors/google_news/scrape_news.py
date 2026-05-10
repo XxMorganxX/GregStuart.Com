@@ -574,7 +574,7 @@ def main():
     # Try GNews first (better image support)
     if HAS_GNEWS:
         print(f"\nFetching articles using GNews library...")
-    print(f"Search query: {SEARCH_QUERY}")
+        print(f"Search query: {SEARCH_QUERY}")
         
         gnews_articles = scrape_with_gnews(SEARCH_QUERY, max_articles=5)
         

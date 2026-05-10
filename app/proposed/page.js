@@ -56,6 +56,7 @@ export default function Proposed() {
             {sections.map((item) => (
               <button 
                 key={item.id}
+                type="button"
                 className={styles.navButton}
                 onClick={() => scrollToSection(item.id)}
               >
@@ -122,8 +123,11 @@ export default function Proposed() {
               <div className={styles.sectionHeader}>
                 <span className={styles.sectionTag}>MMA Initiative</span>
                 <h2 className={styles.sectionTitle}>
-                  Consortium for <span className={styles.highlight}>AI</span> Personalization
+                  <span className={styles.highlight}>AI</span> Personalization (CAP)
                 </h2>
+                <p className={styles.sectionSubtitle}>
+                  Consortium for AI Personalization
+                </p>
               </div>
               
               <div className={styles.sectionContent}>
@@ -210,8 +214,11 @@ export default function Proposed() {
               <div className={styles.sectionHeader}>
                 <span className={styles.sectionTag}>Investments</span>
                 <h2 className={styles.sectionTitle}>
-                  Angel <span className={styles.highlight}>Investing</span> & Advisory
+                  Angel <span className={styles.highlight}>Investing</span>
                 </h2>
+                <p className={styles.sectionSubtitle}>
+                  Early-stage investing and advisory
+                </p>
               </div>
               
               <div className={styles.sectionContent}>
@@ -260,8 +267,11 @@ export default function Proposed() {
               <div className={styles.sectionHeader}>
                 <span className={styles.sectionTag}>In Development</span>
                 <h2 className={styles.sectionTitle}>
-                  <span className={styles.highlight}>TV Show</span>: The Winning Pitch
+                  <span className={styles.highlight}>TV Show</span>
                 </h2>
+                <p className={styles.sectionSubtitle}>
+                  The Winning Pitch
+                </p>
               </div>
               
               <div className={styles.sectionContent}>
@@ -359,11 +369,11 @@ export default function Proposed() {
         <nav className={styles.footerNav}>
           <a href="/about">About Me</a>
           <span className={styles.dot}>●</span>
-          <a href="#media">Media Kit</a>
+          <a href="/media-kit">Media Kit</a>
           <span className={styles.dot}>●</span>
-          <a href="#contact">Contact Me</a>
+          <a href="/contact">Contact Me</a>
           <span className={styles.dot}>●</span>
-          <a href="#news">News &amp; Press</a>
+          <a href="/news">News &amp; Press</a>
         </nav>
         
         <div className={styles.footerRight}>

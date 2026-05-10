@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -34 256 85" role="img" aria-labelledby="title desc">
+  <title id="title">Greg Stuart</title>
+  <desc id="desc">Greg Stuart logo with CEO, Author, Investor, Advisor tagline.</desc>
+  <rect width="256" height="51" fill="none"/>
+  <rect y="0" width="256" height="4" fill="#5d4fa0"/>
+  <line x1="0.5" y1="0" x2="0.5" y2="51" stroke="#5d4fa0" stroke-width="1" opacity="0.35"/>
+  <line x1="0" y1="49.5" x2="256" y2="49.5" stroke="#5d4fa0" stroke-width="3" opacity="0.55"/>
+  <g font-family="'Open Sans', Arial, sans-serif" text-anchor="middle">
+    <text x="128" y="29" font-size="20" font-weight="500" fill="#111111" letter-spacing="-0.45">Greg Stuart</text>
+    <text x="82" y="43" font-size="8.2" font-weight="600" fill="#5f6070" letter-spacing="0.05">CEO</text>
+    <text x="111" y="43" font-size="8.2" font-weight="600" fill="#5f6070" letter-spacing="0.05">Author</text>
+    <text x="149" y="43" font-size="8.2" font-weight="600" fill="#5f6070" letter-spacing="0.05">Investor</text>
+    <text x="184" y="43" font-size="8.2" font-weight="600" fill="#5f6070" letter-spacing="0.05">Advisor</text>
+  </g>
+  <circle cx="190" cy="23" r="4.5" fill="#4d4398"/>
+</svg>

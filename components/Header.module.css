@@ -2,7 +2,7 @@
   display: flex;
   align-items: stretch;
   width: 100%;
-  margin: 0;
+  margin: 50px 0 0;
   padding: 0;
   background: transparent;
   gap: 0;
@@ -21,26 +21,29 @@
 .navLink {
   display: block;
   flex: 1 1 25%;
-  aspect-ratio: 3.5 / 1;
+  aspect-ratio: 5 / 1;
   margin: 0;
   padding: 0;
-  background-color: transparent;
+  background-color: #ffffff;
   border: none;
   outline: none;
-  transform: scaleX(1.005);
-  transform-origin: left center;
   position: relative;
-  overflow: hidden;
+  overflow: visible;
+  transition: background-color 0.2s ease;
+}
+
+.navLink:hover {
+  background-color: rgba(255, 255, 255, 0.84);
 }
 
 .navLink::before {
   content: '';
   position: absolute;
-  top: 0;
+  top: -66.667%;
   left: 0;
   right: 0;
   bottom: 0;
-  background-size: 100% auto;
+  background-size: 100% 100%;
   background-position: center;
   background-repeat: no-repeat;
   opacity: 1;
@@ -52,19 +55,19 @@
 }
 
 .logo::before {
-  background-image: url('/banner/greg_stuart_header.png');
+  background-image: url('/banner/greg-stuart-header.svg');
 }
 
 .perspective::before {
-  background-image: url('/banner/perspective_header_v2.png');
+  background-image: url('/banner/perspective-header.svg');
 }
 
 .projects::before {
-  background-image: url('/banner/projects_header_v2.png');
+  background-image: url('/banner/projects-header.svg');
 }
 
 .proposed::before {
-  background-image: url('/banner/proposed_header_v2.png');
+  background-image: url('/banner/proposed-header.svg');
 }
 
 /* Responsive */

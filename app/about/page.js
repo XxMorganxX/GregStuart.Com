@@ -398,11 +398,11 @@ export default function About() {
         <nav className={styles.footerNav}>
           <a href="/about">About Me</a>
           <span className={styles.dot}>●</span>
-          <a href="#media">Media Kit</a>
+          <a href="/media-kit">Media Kit</a>
           <span className={styles.dot}>●</span>
-          <a href="#contact">Contact Me</a>
+          <a href="/contact">Contact Me</a>
           <span className={styles.dot}>●</span>
-          <a href="#news">News &amp; Press</a>
+          <a href="/news">News &amp; Press</a>
         </nav>
         
         <div className={styles.footerRight}>

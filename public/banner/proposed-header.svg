@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -34 256 85" role="img" aria-labelledby="title desc">
+  <title id="title">Proposed</title>
+  <desc id="desc">Proposed logo with could be, might be tagline.</desc>
+  <rect width="256" height="51" fill="none"/>
+  <rect y="0" width="256" height="4" fill="#bdd750"/>
+  <line x1="0.5" y1="0" x2="0.5" y2="51" stroke="#bdd750" stroke-width="1" opacity="0.66"/>
+  <line x1="255.5" y1="0" x2="255.5" y2="51" stroke="#bdd750" stroke-width="1" opacity="0.66"/>
+  <line x1="0" y1="49.5" x2="256" y2="49.5" stroke="#bdd750" stroke-width="3" opacity="0.75"/>
+  <g transform="translate(16 -18)" fill="none" stroke="#bdd750" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="24" cy="24" r="17.5" fill="#fbfff1" stroke-width="4"/>
+    <path d="M19 15l16 9-16 9z" fill="#bdd750" stroke="none"/>
+  </g>
+  <g font-family="'Open Sans', Arial, sans-serif" text-anchor="middle">
+    <text x="144" y="24" font-size="20" font-weight="500" fill="#111111" letter-spacing="-0.35">Proposed</text>
+    <text x="144" y="39" font-size="10.5" font-weight="500" fill="#a7c045" letter-spacing="0.05">Could be, Might be.</text>
+  </g>
+</svg>

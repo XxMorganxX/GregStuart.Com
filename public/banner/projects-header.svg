@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -34 256 85" role="img" aria-labelledby="title desc">
+  <title id="title">Projects</title>
+  <desc id="desc">Projects logo with busy, busy, busy tagline.</desc>
+  <rect width="256" height="51" fill="none"/>
+  <rect y="0" width="256" height="4" fill="#ead033"/>
+  <line x1="0.5" y1="0" x2="0.5" y2="51" stroke="#ead033" stroke-width="1" opacity="0.62"/>
+  <line x1="0" y1="49.5" x2="256" y2="49.5" stroke="#ead033" stroke-width="3" opacity="0.72"/>
+  <g transform="translate(16 -18)" fill="none" stroke="#ead033" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="24" cy="24" r="17.5" fill="#fffdf0" stroke-width="4"/>
+    <path d="M15 23.5l6 6 13-14" stroke-width="4.2"/>
+    <path d="M16 14.5h16v19H16z" stroke-width="1.8" opacity="0.78"/>
+  </g>
+  <g font-family="'Open Sans', Arial, sans-serif" text-anchor="middle">
+    <text x="144" y="24" font-size="20" font-weight="500" fill="#111111" letter-spacing="-0.35">Projects</text>
+    <text x="144" y="39" font-size="10.5" font-weight="500" fill="#d7bd27" letter-spacing="0.05">Busy, Busy, Busy</text>
+  </g>
+</svg>
